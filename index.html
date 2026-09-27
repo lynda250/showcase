@@ -18,11 +18,7 @@
   img{max-width:100%;display:block;}
 
   /* NAV */
-  nav{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:1.25rem 3rem;border-bottom:1px solid var(--warm-mid);
-    background:var(--cream);position:sticky;top:0;z-index:100;
-  }
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;border-bottom:1px solid var(--warm-mid);background:var(--cream);position:sticky;top:0;z-index:100;}
   .nav-logo{font-family:'Fraunces',serif;font-weight:600;font-size:18px;}
   .nav-logo span{color:var(--accent);}
   .nav-links{display:flex;gap:2rem;}
@@ -30,12 +26,7 @@
   .nav-links a:hover{color:var(--accent);}
 
   /* HERO */
-  .hero{
-    display:grid;grid-template-columns:1fr 220px;gap:3rem;
-    align-items:center;padding:5rem 3rem 4rem;
-    border-bottom:1px solid var(--warm-mid);
-    animation:fadeUp .6s ease both;
-  }
+  .hero{display:grid;grid-template-columns:1fr 220px;gap:3rem;align-items:center;padding:5rem 3rem 4rem;border-bottom:1px solid var(--warm-mid);animation:fadeUp .6s ease both;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
   .hero-eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
   .hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:52px;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.25rem;}
@@ -48,53 +39,45 @@
   .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--warm-mid);}
   .btn-ghost:hover{border-color:var(--ink);}
 
-  /* PHOTO BOX */
+  /* PHOTO */
   .photo-box{display:flex;flex-direction:column;align-items:center;gap:14px;}
-  .photo-wrap{
-    width:200px;height:200px;border-radius:var(--radius);
-    overflow:hidden;position:relative;border:1px solid var(--warm-mid);
-  }
+  .photo-wrap{width:200px;height:200px;border-radius:var(--radius);overflow:hidden;position:relative;border:1px solid var(--warm-mid);}
   .photo-wrap img{width:100%;height:100%;object-fit:cover;}
   .photo-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);}
   .social-links{display:flex;gap:10px;}
   .social-links a{font-size:12px;color:var(--muted);padding:5px 12px;border:1px solid var(--warm-mid);border-radius:var(--radius);transition:all .2s;}
   .social-links a:hover{color:var(--accent);border-color:var(--accent);}
 
-  /* SKILLS */
-  .skills-section{padding:3rem;border-bottom:1px solid var(--warm-mid);max-width:960px;margin:0 auto;}
-  .section-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.25rem;display:flex;align-items:center;gap:8px;}
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--warm-mid);}
+  .stat{padding:1.75rem 3rem;border-right:1px solid var(--warm-mid);}
+  .stat:last-child{border-right:none;}
+  .stat-num{font-family:'Fraunces',serif;font-size:38px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px;}
+  .stat-label{font-size:12px;color:var(--muted);letter-spacing:0.04em;}
+
+  /* SKILLS & TOOLS */
+  .skills-section{padding:3rem;border-bottom:1px solid var(--warm-mid);}
+  .skills-tools-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+  .skills-col{}
+  .section-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
   .section-label::after{content:'';flex:1;height:1px;background:var(--accent-light);}
-  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .skill-group{}
-  .skill-group-title{font-size:12px;font-weight:500;color:var(--ink);letter-spacing:0.04em;margin-bottom:0.75rem;text-transform:uppercase;}
   .skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
   .skill-tag{font-size:11px;letter-spacing:0.04em;background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:var(--radius);font-weight:500;}
 
   /* PROJECTS */
-  .projects-section{padding:3rem;max-width:960px;margin:0 auto;}
+  .projects-section{padding:3rem;}
   .section-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5rem;}
   .section-title{font-family:'Fraunces',serif;font-size:28px;font-weight:300;letter-spacing:-0.02em;}
   .section-count{font-size:12px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}
-  .projects-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:1.5rem;}
-  .project-card{
-    background:var(--card);border:1px solid var(--warm-mid);
-    border-radius:var(--radius);overflow:hidden;
-    display:grid;grid-template-columns:280px 1fr;
-    transition:box-shadow .2s;
-  }
+  .projects-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+  .project-card{background:var(--card);border:1px solid var(--warm-mid);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:280px 1fr;transition:box-shadow .2s;}
   .project-card:hover{box-shadow:0 12px 32px rgba(0,0,0,0.08);}
-  .project-card::before{display:none;}
-  .project-img{width:280px;height:100%;min-height:180px;overflow:hidden;position:relative;}
-  .project-img img{width:100%;height:100%;object-fit:cover;}
-  .project-img-placeholder{
-    width:100%;height:100%;min-height:180px;
-    background:linear-gradient(135deg,var(--warm-mid),var(--accent-light));
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Fraunces',serif;font-size:36px;color:var(--accent);
-  }
+  .project-img{width:280px;overflow:hidden;}
+  .project-img img{width:100%;height:100%;object-fit:cover;display:block;}
+  .project-img-placeholder{width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,var(--warm-mid),var(--accent-light));display:flex;align-items:center;justify-content:center;font-size:40px;}
   .project-body{padding:1.75rem;}
-  .project-badge{display:inline-flex;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:var(--radius);margin-bottom:0.75rem;}
   .project-num{font-family:'Fraunces',serif;font-size:11px;font-style:italic;color:var(--warm-mid);margin-bottom:5px;}
+  .project-badge{display:inline-flex;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:var(--radius);margin-bottom:0.75rem;}
   .project-title{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.6rem;line-height:1.2;}
   .project-desc{font-size:13px;line-height:1.7;color:var(--muted);margin-bottom:1.25rem;}
   .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem;}
@@ -103,12 +86,7 @@
   .project-link:hover{border-color:var(--accent);}
 
   /* CONTACT */
-  .contact-section{
-    margin:3rem;padding:3rem;background:var(--ink);
-    border-radius:var(--radius);display:flex;
-    justify-content:space-between;align-items:center;
-    gap:2rem;flex-wrap:wrap;
-  }
+  .contact-section{margin:3rem;padding:3rem;background:var(--ink);border-radius:var(--radius);display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;}
   .contact-left h2{font-family:'Fraunces',serif;font-size:32px;font-weight:300;color:var(--cream);letter-spacing:-0.02em;margin-bottom:0.4rem;}
   .contact-left h2 em{font-style:italic;color:var(--accent);}
   .contact-left p{font-size:14px;color:var(--muted);}
@@ -119,7 +97,7 @@
   .btn-outline-light:hover{border-color:var(--cream);}
 
   /* FOOTER */
-  footer{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;margin-top:0;border-top:1px solid var(--warm-mid);font-size:12px;color:var(--muted);flex-wrap:wrap;gap:8px;}
+  footer{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-top:1px solid var(--warm-mid);font-size:12px;color:var(--muted);flex-wrap:wrap;gap:8px;}
 
   /* RESPONSIVE */
   @media(max-width:768px){
@@ -127,7 +105,9 @@
     .hero{grid-template-columns:1fr;padding:3rem 1.25rem 2.5rem;}
     .photo-box{display:none;}
     .hero h1{font-size:36px;}
-    .skills-grid{grid-template-columns:1fr;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .stat{padding:1.25rem;border-right:none;border-bottom:1px solid var(--warm-mid);}
+    .skills-tools-row{grid-template-columns:1fr;}
     .project-card{grid-template-columns:1fr;}
     .project-img{width:100%;height:180px;}
     .contact-section{margin:1.25rem;padding:2rem;}
@@ -148,7 +128,7 @@
 
 <!-- ============================================================
      HERO / ABOUT
-     ✏️ EDIT: eyebrow text, bio, button links
+     ✏️ EDIT: eyebrow, bio, button links
 ============================================================ -->
 <section id="about" class="hero">
   <div>
@@ -157,69 +137,83 @@
     <p class="hero-bio">
       <!-- ✏️ EDIT: update your bio here -->
       Data Analyst with 2 years of experience using Excel for report automation,
-      SQL for data interrogation and manipulation, Power BI for business intelligence reporting.
+      SQL for data interrogation & manipulation, Power BI for business intelligence reporting and AI for analytics solutios.
       Skilled in uncovering insights that drive smarter business decisions across
       commercial, operational, and marketing functions.
     </p>
     <div class="cta-row">
       <a href="#projects" class="btn btn-primary">View My Projects</a>
-      <!-- ✏️ EDIT: replace with your CV Google Drive link -->
+      <!-- ✏️ EDIT: your CV link -->
       <a href="https://drive.google.com/file/d/10i5NQnlSxwq1PBtVKGZqyt5oO01VETSj/view?usp=sharing" target="_blank" class="btn btn-ghost">Download CV</a>
     </div>
   </div>
 
   <div class="photo-box">
-    <!--
-      ✏️ PHOTO: upload image.jpg to this repo root
-      then this will show automatically
-    -->
     <div class="photo-wrap">
+      <!-- ✏️ upload image.jpg to this repo -->
       <img src="image.jpg" alt="Ogonna Lynda Udechukwu"/>
     </div>
     <div class="social-links">
-      <!-- ✏️ EDIT: your actual LinkedIn URL -->
+      <!-- ✏️ EDIT: your LinkedIn and GitHub links -->
       <a href="https://www.linkedin.com/in/lyndaude-949b23204" target="_blank">LinkedIn</a>
     </div>
   </div>
 </section>
 
+<!-- STATS -->
+<div class="stats">
+  <!-- ✏️ EDIT: update numbers as you grow -->
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">projects</div></div>
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">Tools mastered</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Years experience</div></div>
+  <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Projects completed</div></div>
+</div>
+
 <!-- ============================================================
-     SKILLS & TOOLS — separated
+     SKILLS & TOOLS — side by side
      ✏️ EDIT: add or remove tags
 ============================================================ -->
 <div id="skills" class="skills-section">
+  <div class="skills-tools-row">
 
-  <!-- SKILLS -->
-  <p class="section-label">Skills</p>
-  <div class="skill-tags" style="margin-bottom:2.5rem;">
-    <span class="skill-tag">Data Analysis</span>
-    <span class="skill-tag">Business Intelligence</span>
-    <span class="skill-tag">Data Visualization</span>
-    <span class="skill-tag">Data Modeling</span>
-    <span class="skill-tag">Data Cleaning & Transformation</span>
-    <span class="skill-tag">Statistical Analysis</span>
-    <span class="skill-tag">KPI Design</span>
-    <span class="skill-tag">Dashboard Design</span>
-    <span class="skill-tag">Storytelling with Data</span>
-    <span class="skill-tag">Report Automation</span>
+    <!-- SKILLS -->
+    <div class="skills-col">
+      <p class="section-label">Skills</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Data Analysis</span>
+        <span class="skill-tag">Business Intelligence</span>
+        <span class="skill-tag">Data Visualization & reporting</span>
+        <span class="skill-tag">Data Modeling</span>
+        <span class="skill-tag">Data Cleaning & Transformation</span>
+        <span class="skill-tag">Statistical Analysis</span>
+        <span class="skill-tag">KPI Design</span>
+        <span class="skill-tag">Dashboard Design</span>
+        <span class="skill-tag">Storytelling with Data</span>
+        <span class="skill-tag">Report Automation</span>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="skills-col">
+      <p class="section-label">Tools</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">DAX</span>
+        <span class="skill-tag">Power Query</span>
+        <span class="skill-tag">SQL Server</span>
+        <span class="skill-tag">Microsoft Excel</span>
+        <span class="skill-tag">Pivot Tables</span>
+        <span class="skill-tag">Pivot Charts</span>
+        <span class="skill-tag">Slicers</span>
+        <span class="skill-tag">CTEs</span>
+        <span class="skill-tag">Window Functions</span>
+        <span class="skill-tag">Joins</span>
+        <span class="skill-tag">Claude</span>
+        <span class="skill-tag">Chatgpt</span>
+      </div>
+    </div>
+
   </div>
-
-  <!-- TOOLS -->
-  <p class="section-label">Tools</p>
-  <div class="skill-tags">
-    <span class="skill-tag">Power BI</span>
-    <span class="skill-tag">DAX</span>
-    <span class="skill-tag">Power Query</span>
-    <span class="skill-tag">SQL Server</span>
-    <span class="skill-tag">Microsoft Excel</span>
-    <span class="skill-tag">Pivot Tables</span>
-    <span class="skill-tag">Pivot Charts</span>
-    <span class="skill-tag">Slicers</span>
-    <span class="skill-tag">CTEs</span>
-    <span class="skill-tag">Window Functions</span>
-    <span class="skill-tag">Joins</span>
-  </div>
-
 </div>
 
 <!-- ============================================================
@@ -228,7 +222,7 @@
 ============================================================ -->
 <div id="projects" class="projects-section">
   <div class="section-header">
-    <h2 class="section-title">Showcase projects</h2>
+    <h2 class="section-title">projects</h2>
     <span class="section-count">03 works</span>
   </div>
 
@@ -238,8 +232,8 @@
     <div class="project-card">
       <div class="project-img">
         <!--
-          ✏️ SCREENSHOT: upload ecom-cover.png to this repo
-          then replace the placeholder div with:
+          ✏️ upload ecom-cover.png to this repo then replace
+          the placeholder div with:
           <img src="ecom-cover.png" alt="Ecommerce Dashboard"/>
         -->
         <div class="project-img-placeholder">📈</div>
@@ -269,8 +263,8 @@
     <div class="project-card">
       <div class="project-img">
         <!--
-          ✏️ SCREENSHOT: upload b2b-cover.png to this repo
-          then replace the placeholder div with:
+          ✏️ upload b2b-cover.png to this repo then replace
+          the placeholder div with:
           <img src="b2b-cover.png" alt="B2B Sales Dashboard"/>
         -->
         <div class="project-img-placeholder">📊</div>
@@ -300,8 +294,8 @@
     <div class="project-card">
       <div class="project-img">
         <!--
-          ✏️ SCREENSHOT: upload procurement-cover.png to this repo
-          then replace the placeholder div with:
+          ✏️ upload procurement-cover.png to this repo then replace
+          the placeholder div with:
           <img src="procurement-cover.png" alt="Procurement Dashboard"/>
         -->
         <div class="project-img-placeholder">🏭</div>
