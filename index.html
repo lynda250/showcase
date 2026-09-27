@@ -1,1 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ogonna Lynda Udechukwu | Data Analyst Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink:#1a1814; --cream:#f5f0e8; --warm-mid:#e0d8c8;
+    --accent:#c4622d; --accent-light:#f0ddd3; --muted:#7a7060;
+    --card:#ffffff; --radius:4px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
 
+  /* NAV */
+  nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.25rem 3rem;border-bottom:1px solid var(--warm-mid);
+    background:var(--cream);position:sticky;top:0;z-index:100;
+  }
+  .nav-logo{font-family:'Fraunces',serif;font-weight:600;font-size:18px;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+  .nav-links a:hover{color:var(--accent);}
+
+  /* HERO */
+  .hero{
+    display:grid;grid-template-columns:1fr 220px;gap:3rem;
+    align-items:center;padding:5rem 3rem 4rem;
+    border-bottom:1px solid var(--warm-mid);
+    animation:fadeUp .6s ease both;
+  }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  .hero-eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+  .hero h1{font-family:'Fraunces',serif;font-weight:300;font-size:52px;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.25rem;}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero-bio{font-size:15px;line-height:1.8;color:var(--muted);max-width:500px;margin-bottom:1.75rem;}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{font-size:13px;font-family:'DM Sans',sans-serif;padding:11px 24px;border-radius:var(--radius);cursor:pointer;letter-spacing:0.02em;transition:all .2s;display:inline-block;}
+  .btn-primary{background:var(--ink);color:var(--cream);border:1.5px solid var(--ink);}
+  .btn-primary:hover{background:var(--accent);border-color:var(--accent);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--warm-mid);}
+  .btn-ghost:hover{border-color:var(--ink);}
+
+  /* PHOTO BOX */
+  .photo-box{display:flex;flex-direction:column;align-items:center;gap:14px;}
+  .photo-wrap{
+    width:200px;height:200px;border-radius:var(--radius);
+    overflow:hidden;position:relative;border:1px solid var(--warm-mid);
+  }
+  .photo-wrap img{width:100%;height:100%;object-fit:cover;}
+  .photo-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);}
+  .social-links{display:flex;gap:10px;}
+  .social-links a{font-size:12px;color:var(--muted);padding:5px 12px;border:1px solid var(--warm-mid);border-radius:var(--radius);transition:all .2s;}
+  .social-links a:hover{color:var(--accent);border-color:var(--accent);}
+
+  /* SKILLS */
+  .skills-section{padding:3rem;border-bottom:1px solid var(--warm-mid);max-width:960px;margin:0 auto;}
+  .section-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.25rem;display:flex;align-items:center;gap:8px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--accent-light);}
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .skill-group{}
+  .skill-group-title{font-size:12px;font-weight:500;color:var(--ink);letter-spacing:0.04em;margin-bottom:0.75rem;text-transform:uppercase;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .skill-tag{font-size:11px;letter-spacing:0.04em;background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:var(--radius);font-weight:500;}
+
+  /* PROJECTS */
+  .projects-section{padding:3rem;max-width:960px;margin:0 auto;}
+  .section-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5rem;}
+  .section-title{font-family:'Fraunces',serif;font-size:28px;font-weight:300;letter-spacing:-0.02em;}
+  .section-count{font-size:12px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;}
+  .projects-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:1.5rem;}
+  .project-card{
+    background:var(--card);border:1px solid var(--warm-mid);
+    border-radius:var(--radius);overflow:hidden;
+    display:grid;grid-template-columns:280px 1fr;
+    transition:box-shadow .2s;
+  }
+  .project-card:hover{box-shadow:0 12px 32px rgba(0,0,0,0.08);}
+  .project-card::before{display:none;}
+  .project-img{width:280px;height:100%;min-height:180px;overflow:hidden;position:relative;}
+  .project-img img{width:100%;height:100%;object-fit:cover;}
+  .project-img-placeholder{
+    width:100%;height:100%;min-height:180px;
+    background:linear-gradient(135deg,var(--warm-mid),var(--accent-light));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:36px;color:var(--accent);
+  }
+  .project-body{padding:1.75rem;}
+  .project-badge{display:inline-flex;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;color:var(--accent);background:var(--accent-light);padding:3px 10px;border-radius:var(--radius);margin-bottom:0.75rem;}
+  .project-num{font-family:'Fraunces',serif;font-size:11px;font-style:italic;color:var(--warm-mid);margin-bottom:5px;}
+  .project-title{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.6rem;line-height:1.2;}
+  .project-desc{font-size:13px;line-height:1.7;color:var(--muted);margin-bottom:1.25rem;}
+  .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem;}
+  .tag{font-size:11px;padding:3px 10px;border:1px solid var(--warm-mid);border-radius:var(--radius);color:var(--muted);}
+  .project-link{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--accent-light);padding-bottom:2px;transition:border-color .2s;}
+  .project-link:hover{border-color:var(--accent);}
+
+  /* CONTACT */
+  .contact-section{
+    margin:3rem;padding:3rem;background:var(--ink);
+    border-radius:var(--radius);display:flex;
+    justify-content:space-between;align-items:center;
+    gap:2rem;flex-wrap:wrap;
+  }
+  .contact-left h2{font-family:'Fraunces',serif;font-size:32px;font-weight:300;color:var(--cream);letter-spacing:-0.02em;margin-bottom:0.4rem;}
+  .contact-left h2 em{font-style:italic;color:var(--accent);}
+  .contact-left p{font-size:14px;color:var(--muted);}
+  .contact-right{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-light{background:var(--cream);color:var(--ink);border:1.5px solid var(--cream);}
+  .btn-light:hover{background:var(--accent);color:var(--cream);border-color:var(--accent);}
+  .btn-outline-light{background:transparent;color:var(--cream);border:1.5px solid rgba(255,255,255,0.2);}
+  .btn-outline-light:hover{border-color:var(--cream);}
+
+  /* FOOTER */
+  footer{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;margin-top:0;border-top:1px solid var(--warm-mid);font-size:12px;color:var(--muted);flex-wrap:wrap;gap:8px;}
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    nav,.skills-section,.projects-section{padding-left:1.25rem;padding-right:1.25rem;}
+    .hero{grid-template-columns:1fr;padding:3rem 1.25rem 2.5rem;}
+    .photo-box{display:none;}
+    .hero h1{font-size:36px;}
+    .skills-grid{grid-template-columns:1fr;}
+    .project-card{grid-template-columns:1fr;}
+    .project-img{width:100%;height:180px;}
+    .contact-section{margin:1.25rem;padding:2rem;}
+    footer{padding:1rem 1.25rem;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Ogonna Lynda Udechukwu<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO / ABOUT
+     ✏️ EDIT: eyebrow text, bio, button links
+============================================================ -->
+<section id="about" class="hero">
+  <div>
+    <p class="hero-eyebrow">DATA ANALYST &nbsp;·&nbsp; PORTFOLIO</p>
+    <h1>Finding insight that<br><em>drive better decision</em></h1>
+    <p class="hero-bio">
+      <!-- ✏️ EDIT: update your bio here -->
+      Data Analyst with 2 years of experience using Excel for report automation,
+      SQL for data interrogation and manipulation, Power BI for business intelligence reporting.
+      Skilled in uncovering insights that drive smarter business decisions across
+      commercial, operational, and marketing functions.
+    </p>
+    <div class="cta-row">
+      <a href="#projects" class="btn btn-primary">View My Projects</a>
+      <!-- ✏️ EDIT: replace with your CV Google Drive link -->
+      <a href="https://drive.google.com/file/d/10i5NQnlSxwq1PBtVKGZqyt5oO01VETSj/view?usp=sharing" target="_blank" class="btn btn-ghost">Download CV</a>
+    </div>
+  </div>
+
+  <div class="photo-box">
+    <!--
+      ✏️ PHOTO: upload image.jpg to this repo root
+      then this will show automatically
+    -->
+    <div class="photo-wrap">
+      <img src="image.jpg" alt="Ogonna Lynda Udechukwu"/>
+    </div>
+    <div class="social-links">
+      <!-- ✏️ EDIT: your actual LinkedIn URL -->
+      <a href="https://www.linkedin.com/in/lyndaude-949b23204" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS & TOOLS — separated
+     ✏️ EDIT: add or remove tags
+============================================================ -->
+<div id="skills" class="skills-section">
+
+  <!-- SKILLS -->
+  <p class="section-label">Skills</p>
+  <div class="skill-tags" style="margin-bottom:2.5rem;">
+    <span class="skill-tag">Data Analysis</span>
+    <span class="skill-tag">Business Intelligence</span>
+    <span class="skill-tag">Data Visualization</span>
+    <span class="skill-tag">Data Modeling</span>
+    <span class="skill-tag">Data Cleaning & Transformation</span>
+    <span class="skill-tag">Statistical Analysis</span>
+    <span class="skill-tag">KPI Design</span>
+    <span class="skill-tag">Dashboard Design</span>
+    <span class="skill-tag">Storytelling with Data</span>
+    <span class="skill-tag">Report Automation</span>
+  </div>
+
+  <!-- TOOLS -->
+  <p class="section-label">Tools</p>
+  <div class="skill-tags">
+    <span class="skill-tag">Power BI</span>
+    <span class="skill-tag">DAX</span>
+    <span class="skill-tag">Power Query</span>
+    <span class="skill-tag">SQL Server</span>
+    <span class="skill-tag">Microsoft Excel</span>
+    <span class="skill-tag">Pivot Tables</span>
+    <span class="skill-tag">Pivot Charts</span>
+    <span class="skill-tag">Slicers</span>
+    <span class="skill-tag">CTEs</span>
+    <span class="skill-tag">Window Functions</span>
+    <span class="skill-tag">Joins</span>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     PROJECTS
+     ✏️ Each card links to its own project page
+============================================================ -->
+<div id="projects" class="projects-section">
+  <div class="section-header">
+    <h2 class="section-title">Showcase projects</h2>
+    <span class="section-count">03 works</span>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1: ECOMMERCE -->
+    <div class="project-card">
+      <div class="project-img">
+        <!--
+          ✏️ SCREENSHOT: upload ecom-cover.png to this repo
+          then replace the placeholder div with:
+          <img src="ecom-cover.png" alt="Ecommerce Dashboard"/>
+        -->
+        <div class="project-img-placeholder">📈</div>
+      </div>
+      <div class="project-body">
+        <div class="project-num">01</div>
+        <div class="project-badge">📈 Power BI · ZoomCharts Challenge</div>
+        <h3 class="project-title">Ecommerce Performance Dashboard</h3>
+        <p class="project-desc">
+          A three-page Power BI report tracking €640.42K in net sales across
+          categories, channels, and regions — answering where profit is coming
+          from and where it is being quietly lost across campaigns, products,
+          and customer segments.
+        </p>
+        <div class="project-tags">
+          <span class="tag">DAX</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">Star Schema</span>
+          <span class="tag">Contribution Margin</span>
+          <span class="tag">Customer Segmentation</span>
+        </div>
+        <a href="ecommerce.html" class="project-link">View Full Case Study →</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2: B2B SALES -->
+    <div class="project-card">
+      <div class="project-img">
+        <!--
+          ✏️ SCREENSHOT: upload b2b-cover.png to this repo
+          then replace the placeholder div with:
+          <img src="b2b-cover.png" alt="B2B Sales Dashboard"/>
+        -->
+        <div class="project-img-placeholder">📊</div>
+      </div>
+      <div class="project-body">
+        <div class="project-num">02</div>
+        <div class="project-badge">📈 Power BI · ZoomCharts Challenge</div>
+        <h3 class="project-title">B2B Sales & Commercial Performance</h3>
+        <p class="project-desc">
+          Three-page dashboard tracking $22.41M in net sales across revenue,
+          profitability, and commercial execution — covering 3 regions, 6 sales
+          channels, and 3 product categories to support smarter sales strategy
+          and margin protection.
+        </p>
+        <div class="project-tags">
+          <span class="tag">DAX</span>
+          <span class="tag">Drill-through</span>
+          <span class="tag">KPI Cards</span>
+          <span class="tag">Sales Analytics</span>
+          <span class="tag">Profitability</span>
+        </div>
+        <a href="b2b-sales.html" class="project-link">View Full Case Study →</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3: PROCUREMENT -->
+    <div class="project-card">
+      <div class="project-img">
+        <!--
+          ✏️ SCREENSHOT: upload procurement-cover.png to this repo
+          then replace the placeholder div with:
+          <img src="procurement-cover.png" alt="Procurement Dashboard"/>
+        -->
+        <div class="project-img-placeholder">🏭</div>
+      </div>
+      <div class="project-body">
+        <div class="project-num">03</div>
+        <div class="project-badge">📈 Power BI · FP20 Analytics Challenge</div>
+        <h3 class="project-title">Procurement Performance Analysis</h3>
+        <p class="project-desc">
+          Three-page procurement report tracking £908.8M in spend across
+          15 suppliers, 10 departments, and 4 regions — identifying where
+          budget is leaking through maverick spend, overdue invoices, and
+          contract coverage gaps.
+        </p>
+        <div class="project-tags">
+          <span class="tag">DAX</span>
+          <span class="tag">Risk Analytics</span>
+          <span class="tag">ESG Scoring</span>
+          <span class="tag">Supplier Performance</span>
+        </div>
+        <a href="procurement.html" class="project-link">View Full Case Study →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="contact-section">
+  <div class="contact-left">
+    <h2>Let's work<br><em>together</em></h2>
+    <p>Open to data analyst roles and freelance projects.</p>
+  </div>
+  <div class="contact-right">
+    <!-- ✏️ EDIT: your actual email -->
+    <a href="mailto:lyndaudechukwu@gmail.com" class="btn btn-light">Send me an email</a>
+    <a href="https://www.linkedin.com/in/lyndaude-949b23204" target="_blank" class="btn btn-outline-light">LinkedIn</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2025 Ogonna Lynda Udechukwu</span>
+  <span>Data Analyst Portfolio</span>
+</footer>
+
+</body>
+</html>
