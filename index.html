@@ -441,7 +441,11 @@
       </div>
 
       <p class="m-label">About the Dataset</p>
-      <p class="m-text">Star schema with one central fact table <strong>FactOrderLine</strong> containing 46 columns covering every order line: units sold, revenue, cost, discount, return status, fulfillment details, and marketing allocation. Connected to 9 dimension tables: DimDate, DimProduct, DimCustomer, DimGeography, DimPromotion, DimFulfillment, DimSalesChannel, DimReturnReason, and DimCohortAge.</p>
+      <p class="m-text">The source data arrived as a single flat Excel workbook containing one consolidated table every order line, customer detail, product attribute, geography, promotion, and fulfillment metric all sitting in the same sheet. 
+        Before any modeling could begin, the data needed to be understood, segmented, and restructured.
+        From that flat file, the data was split and organized into a star schema one central fact table (FactOrderLine) capturing every transaction line, connected to 9 dimensional tables: 
+        DimDate, DimProduct, DimCustomer, DimGeography, DimPromotion, DimFulfillment, DimSalesChannel, DimReturnReason, and DimCohortAge. 
+        This separation ensured clean relationships, efficient querying, and a model built for analysis rather than storage.
 
       <p class="m-label">Data Cleaning & Transformation</p>
       <p class="m-title">All cleaning done in Power Query. DAX kept clean.</p>
