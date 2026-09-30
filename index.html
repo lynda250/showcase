@@ -896,15 +896,293 @@
 </div>
 
 <!-- MODAL 3: PROCUREMENT PLACEHOLDER -->
+<!-- MODAL: PROCUREMENT PERFORMANCE ANALYSIS -->
 <div class="modal-overlay" id="modal-proc" onclick="bgClose(event,'proc')">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('proc')">✕</button>
-    <div class="modal-inner" style="padding-top:1.5rem;">
-      <span class="modal-badge">📈 Power BI · FP20 Analytics Challenge</span>
+    <div class="modal-inner">
+      <span class="modal-badge">📈 Power BI  </span>
       <h2 class="modal-title">Procurement Performance Analysis</h2>
-      <p class="modal-intro" style="margin-top:0.75rem;">Full case study documentation coming soon. Click the button below to view the live dashboard.</p>
-      <div class="m-footer-bar" style="margin-top:1rem;">
-        <a href="#" target="_blank" class="m-link-btn">View Power BI Dashboard ↗</a>
+      <p class="modal-intro">A large organisation managing over £900M in annual
+      procurement spend across 15 suppliers, 10 departments, and 4 global regions
+      needs more than a spend report. Finance, procurement, and risk teams need to
+      understand whether contracts are being followed, suppliers are delivering,
+      and where rogue buying is quietly undermining negotiated savings.</p>
+
+      <a href="#" target="_blank" class="modal-dataset">📂 Download Dataset ↗</a>
+      <div class="modal-divider"></div>
+
+      <p class="m-label">Star Metrics</p>
+      <div class="m-model-wrap">
+        <!-- ✏️ IMAGE SLOT A: star metrics screenshot -->
+        <img src="ADD-PROC-STAR-METRICS.png" alt="Procurement Star Metrics"/>
+      </div>
+
+      <p class="m-label">About the Dataset</p>
+      <p class="m-text">The source data arrived as a flat procurement transaction
+      file containing supplier details, purchase order records, invoice status,
+      delivery performance, contract coverage, and ESG scores — all in one table.
+      Before any modeling could begin, the data was restructured into a star schema
+      separating transactional facts from supplier, department, category, and date
+      dimensions to support efficient analysis across all three report pages.</p>
+
+      <p class="m-label">Data Cleaning & Transformation</p>
+      <p class="m-title">All cleaning done in Power Query. DAX kept clean.</p>
+      <ul class="m-clean-list">
+        <li><strong>Standardised headers and data types:</strong> Date fields,
+        currency values, and percentage columns typed explicitly across all tables
+        rather than left as auto-detected types.</li>
+        <li><strong>Text cleaning across all tables:</strong> Supplier names,
+        department labels, and category fields trimmed and cleaned to remove
+        hidden characters that would break relationships and filter inconsistencies.</li>
+        <li><strong>Deduplication on dimension tables:</strong> Duplicate supplier
+        and department records removed to ensure clean one-to-many relationships
+        with the fact table.</li>
+        <li><strong>Columns renamed for clarity:</strong> Technical field names
+        replaced with clear business labels readable in the report context.</li>
+        <li><strong>All DAX measures calculated explicitly:</strong> Maverick
+        Spend %, Savings Rate, On-Time Delivery %, Contract Coverage %,
+        Single-Source Spend %, and Avg ESG Score built as explicit DAX measures
+        — keeping the model efficient and the fact table clean.</li>
+      </ul>
+
+      <p class="m-label">Data Model</p>
+      <p class="m-title">Star schema — fact table at the centre.</p>
+      <div class="m-model-wrap">
+        <!-- ✏️ IMAGE SLOT B: data model screenshot -->
+        <img src="Procurement Modeling.png" alt="Procurement Data Model"/>
+      </div>
+      <p class="m-model-caption">Fact table connects to dimension tables covering
+      suppliers, departments, categories, regions, and dates with a separate
+      calculated measures table kept off the fact table to maintain a clean,
+      efficient model.</p>
+
+      <p class="m-label">Dashboard Walkthrough</p>
+      <p class="m-title">Three pages. Spend, suppliers, and risk.</p>
+      <div class="m-flipper" id="proc-modal-flipper">
+        <div class="m-flip-tabs">
+          <div class="m-flip-tab active">Overview</div>
+          <div class="m-flip-tab">Suppliers</div>
+          <div class="m-flip-tab">Risk</div>
+        </div>
+        <div class="m-flip-stage">
+          <!-- ✏️ IMAGE SLOT C: Overview page -->
+          <div class="m-flip-page active">
+            <img src="P_overview.png" alt="Executive Overview"/>
+          </div>
+          <!-- ✏️ IMAGE SLOT D: Suppliers page -->
+          <div class="m-flip-page">
+            <img src="P_suppliers.png" alt="Suppliers Performance"/>
+          </div>
+          <!-- ✏️ IMAGE SLOT E: Risk page -->
+          <div class="m-flip-page">
+            <img src="P_risk.png" alt="Risk Control and Efficiency"/>
+          </div>
+        </div>
+        <div class="m-flip-nav">
+          <button class="m-flip-arrow m-flip-prev-proc">← Prev</button>
+          <span class="m-flip-counter" id="proc-counter">Page 1 of 3</span>
+          <button class="m-flip-arrow m-flip-next-proc">Next →</button>
+        </div>
+      </div>
+      <div class="m-page-desc" id="proc-page-desc">
+        <strong>Page 1 — Executive Overview:</strong> Tracks total spend against
+        budget, maverick spend by category and department, and regional spend
+        distribution — giving leadership a full picture of where money is going
+        and where control is breaking down.
+      </div>
+
+      <p class="m-label">Visual Analysis</p>
+      <p class="m-title">Four visuals. Four decisions the business needs to make.</p>
+      <div class="m-visuals-grid">
+
+        <!-- VISUAL 1: Spend vs Budget Trend -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT F: Spend vs Budget Trend line chart -->
+          <img class="m-visual-img"
+               src="P_salestrend.png"
+               alt="Spend vs Budget Trend"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">So what — Finance & Procurement leadership</p>
+            <p class="m-visual-title">Spend vs Budget Trend</p>
+            <p class="m-visual-story">Actual spend consistently tracks below
+            budget but spikes in Q4 every year before dropping in Q1. The
+            business is not overspending — it is back-loading purchases, which
+            creates rushed decisions and reduced negotiating leverage when
+            suppliers know orders are coming regardless of price.</p>
+          </div>
+        </div>
+
+        <!-- VISUAL 2: Avg Supplier ESG by Spend and Risk -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT G: ESG scatter/bubble chart -->
+          <img class="m-visual-img"
+               src="P_ESG.png"
+               alt="Avg Supplier ESG by Spend and Risk"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">So what — Risk & Sustainability teams</p>
+            <p class="m-visual-title">Avg Supplier ESG by Spend and Risk</p>
+            <p class="m-visual-story">The most expensive suppliers are not
+            the most sustainable. Blue Horizon Packaging sits at
+            second-highest spend but scores below the 60.55 ESG average.
+            Spend concentration in low-ESG suppliers is a reputational and
+            regulatory risk — not just a values question.</p>
+          </div>
+        </div>
+
+        <!-- VISUAL 3: Maverick Spend by Department -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT H: Maverick Spend by Department bar chart -->
+          <img class="m-visual-img"
+               src="P_dept.png"
+               alt="Maverick Spend by Department"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">So what — CFO & Department Heads</p>
+            <p class="m-visual-title">Maverick Spend by Department</p>
+            <p class="m-visual-story">£98.19M is flowing outside contracted
+            channels. Marketing leads at £16.8M. Every pound of maverick
+            spend bypasses negotiated pricing, contract protections, and
+            audit trails — the departments generating it are likely unaware
+            of the true cost beyond the invoice price.</p>
+          </div>
+        </div>
+
+        <!-- VISUAL 4: Suppliers Risk and Compliance -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT I: Supplier Risk and Compliance table -->
+          <img class="m-visual-img"
+               src="P_R&C.png"
+               alt="Suppliers Risk and Compliance"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">So what — Procurement & Risk Management</p>
+            <p class="m-visual-title">Suppliers Risk and Compliance</p>
+            <p class="m-visual-story">Risk classification alone is not enough.
+            Nordic Office Solutions carries 22.21% single-source exposure
+            despite Low risk status. Iron Gate Steel has 70.80% maverick
+            spend despite Medium classification. The real vulnerabilities
+            only appear when you look at multiple dimensions together.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="m-label">Business Questions & Answers</p>
+      <p class="m-title">Five questions the dashboard was built to answer.</p>
+      <ul class="m-biz-list">
+        <li class="m-biz-item">
+          <p class="m-biz-q">1. Is the organisation spending within budget
+          and achieving planned savings?</p>
+          <p class="m-biz-a">→ Insight: Total spend of £908.8M came in under
+          the £1.01B budget, delivering a 10.29% savings rate (£104.27M).
+          But spend is heavily back-loaded toward Q4 every year, creating
+          planning and negotiation problems that the headline saving masks.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">2. Which suppliers are delivering value and
+          which are creating risk?</p>
+          <p class="m-biz-a">→ Insight: Delta Engineering leads spend at £75M
+          but carries a 36.38-day average lead time. Blue Horizon Packaging
+          at £74M scores below the ESG average. High spend does not mean
+          low risk — the two dimensions need to be assessed together.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">3. How much spend is happening outside approved
+          contracts and why does it matter?</p>
+          <p class="m-biz-a">→ Insight: £98.19M — 10.8% of total spend — is
+          maverick buying outside contracted channels. Marketing alone
+          accounts for £16.8M. This spend has no negotiated pricing, no
+          SLA protection, and no audit trail.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">4. Where are invoice and payment backlogs
+          building up?</p>
+          <p class="m-biz-a">→ Insight: £128.4M sits in overdue invoices
+          (15.52% of POs) with only 31.79% of invoices fully paid. This
+          creates supplier relationship risk — vendors may deprioritise
+          orders or tighten credit terms in response.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">5. Which departments are driving the most
+          uncontrolled spending?</p>
+          <p class="m-biz-a">→ Insight: Marketing, Finance, and IT lead
+          maverick spend at £16.8M, £13M, and £12.4M respectively. These
+          are not procurement failures — they are business control failures
+          that procurement policy alone cannot fix.</p>
+        </li>
+      </ul>
+
+      <p class="m-label">Key Insights</p>
+      <p class="m-title">What the data is really telling us.</p>
+      <ul class="m-insight-list">
+        <li><strong>Savings look strong on paper but delivery risk
+        is eating into them.</strong> £104.27M saved against budget sounds
+        impressive. But with 35.87% of orders arriving late and an average
+        lead time of 36 days, the operational cost of poor delivery
+        performance is compressing those savings in ways the savings
+        report cannot capture.</li>
+
+        <li><strong>Over a third of spend has no approved contract
+        behind it.</strong> Contract coverage at 64.49% means roughly
+        £322M in spend operates without formal agreements, negotiated
+        pricing, or audit protection. That is not a gap — it is a
+        structural control failure.</li>
+
+        <li><strong>The maverick spend problem is a department
+        behaviour problem, not a procurement process problem.</strong>
+        When Marketing, Finance, and IT are the top three maverick spenders,
+        the issue is not that procurement policy does not exist — it is
+        that departments are bypassing it. Policy enforcement needs to
+        happen at department head level, not procurement level.</li>
+
+        <li><strong>ESG risk is hiding in the highest-spend
+        suppliers.</strong> The suppliers receiving the most money are
+        not the ones scoring highest on ESG. That misalignment will
+        become a liability as sustainability reporting requirements
+        tighten across industries.</li>
+
+        <li><strong>£128.4M in unpaid invoices is a supplier
+        relationship time bomb.</strong> At 15.52% overdue and only
+        31.79% fully paid, the organisation is building goodwill debt
+        with its own supply chain. Suppliers operating on thin margins
+        cannot absorb this indefinitely.</li>
+      </ul>
+
+      <p class="m-label">Recommendations</p>
+      <p class="m-title">What the business should do next.</p>
+      <ul class="m-insight-list">
+        <li><strong>Rebalance procurement activity away from Q4.</strong>
+        Back-loaded spending creates rushed decisions and weak negotiating
+        positions. Quarterly spend targets with department-level tracking
+        would smooth the curve.</li>
+
+        <li><strong>Raise contract coverage to a minimum 80% of spend.</strong>
+        The current 64.49% leaves too much spend unprotected. Priority
+        should go to the highest-spend categories and departments with
+        the highest maverick rates.</li>
+
+        <li><strong>Put Blue Horizon Packaging on an ESG improvement
+        plan or begin qualifying alternatives.</strong> As the second
+        largest supplier by spend with a below-average ESG score, it
+        represents a concentration of sustainability risk the organisation
+        cannot ignore.</li>
+
+        <li><strong>Create a structured invoice clearing plan for
+        the £128.4M overdue balance.</strong> Prioritise suppliers with
+        the highest spend and longest payment delays before relationship
+        damage becomes supply chain disruption.</li>
+
+        <li><strong>Introduce department-level maverick spend
+        accountability.</strong> Marketing and Finance cannot continue
+        generating £30M+ in uncontrolled spending without consequences.
+        Monthly reporting to department heads — not just procurement —
+        is the minimum intervention required.</li>
+      </ul>
+
+      <div class="m-footer-bar">
+        <!-- ✏️ ADD LINK: replace # with your Power BI file link -->
+        <a href="#" target="_blank" class="m-link-btn">
+          View Power BI Dashboard ↗
+        </a>
       </div>
     </div>
   </div>
@@ -987,6 +1265,34 @@
   wrap.querySelector('.m-flip-prev-b2b')
       .addEventListener('click',()=>goTo((cur-1+total)%total));
   wrap.querySelector('.m-flip-next-b2b')
+      .addEventListener('click',()=>goTo((cur+1)%total));
+})();
+
+  (function(){
+  const wrap = document.getElementById('proc-modal-flipper');
+  if(!wrap) return;
+  const pages = wrap.querySelectorAll('.m-flip-page');
+  const tabs  = wrap.querySelectorAll('.m-flip-tab');
+  const counter = document.getElementById('proc-counter');
+  const descEl  = document.getElementById('proc-page-desc');
+  let cur = 0;
+  const total = pages.length;
+  const descs = [
+    '<strong>Page 1 — Executive Overview:</strong> Tracks total spend against budget, maverick spend by category and department, and regional spend distribution — giving leadership a full picture of where money is going and where control is breaking down.',
+    '<strong>Page 2 — Suppliers Performance:</strong> Covers top supplier spend, on-time delivery rates, ESG scores, and supplier distribution by region — showing which suppliers are reliable and which are creating operational risk.',
+    '<strong>Page 3 — Risk, Control & Efficiency:</strong> Flags maverick spend, single-source exposure, high-risk supplier spend, overdue invoices, and contract coverage gaps — the page that answers where the organisation is most vulnerable.'
+  ];
+  function goTo(i){
+    pages.forEach((p,j)=>p.classList.toggle('active',j===i));
+    tabs.forEach((t,j)=>t.classList.toggle('active',j===i));
+    counter.textContent='Page '+(i+1)+' of '+total;
+    descEl.innerHTML=descs[i];
+    cur=i;
+  }
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>goTo(i)));
+  wrap.querySelector('.m-flip-prev-proc')
+      .addEventListener('click',()=>goTo((cur-1+total)%total));
+  wrap.querySelector('.m-flip-next-proc')
       .addEventListener('click',()=>goTo((cur+1)%total));
 })();
 </script>
