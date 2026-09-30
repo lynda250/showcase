@@ -443,7 +443,7 @@
       </div>
 
       <p class="m-label">About the Dataset</p>
-      <p class="m-text">Star schema with one central fact table — <strong>FactOrderLine</strong> — containing 46 columns covering every order line: units sold, revenue, cost, discount, return status, fulfillment details, and marketing allocation. Connected to 9 dimension tables: DimDate, DimProduct, DimCustomer, DimGeography, DimPromotion, DimFulfillment, DimSalesChannel, DimReturnReason, and DimCohortAge.</p>
+      <p class="m-text">Star schema with one central fact table <strong>FactOrderLine</strong> containing 46 columns covering every order line: units sold, revenue, cost, discount, return status, fulfillment details, and marketing allocation. Connected to 9 dimension tables: DimDate, DimProduct, DimCustomer, DimGeography, DimPromotion, DimFulfillment, DimSalesChannel, DimReturnReason, and DimCohortAge.</p>
 
       <p class="m-label">Data Cleaning & Transformation</p>
       <p class="m-title">All cleaning done in Power Query. DAX kept clean.</p>
@@ -631,15 +631,321 @@
 </div>
 
 <!-- MODAL 2: B2B PLACEHOLDER -->
+<!-- MODAL: B2B SALES & COMMERCIAL PERFORMANCE -->
 <div class="modal-overlay" id="modal-b2b" onclick="bgClose(event,'b2b')">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('b2b')">✕</button>
-    <div class="modal-inner" style="padding-top:1.5rem;">
-      <span class="modal-badge">📈 Power BI · ZoomCharts Challenge</span>
-      <h2 class="modal-title">B2B Sales &amp; Commercial Performance</h2>
-      <p class="modal-intro" style="margin-top:0.75rem;">Full case study documentation coming soon. Click the button below to view the live dashboard.</p>
-      <div class="m-footer-bar" style="margin-top:1rem;">
-        <a href="#" target="_blank" class="m-link-btn">View Power BI Dashboard ↗</a>
+    <div class="modal-inner">
+      <span class="modal-badge">📈 Power BI · ZoomCharts Challenge · August 2026</span>
+      <h2 class="modal-title">B2B Sales & Commercial Performance</h2>
+      <p class="modal-intro">A B2B technology and services company operating across
+      North America, Europe, and Asia Pacific needs visibility from top-line performance
+      down to individual product and customer level to protect margins from discount
+      pressure, identify where growth is most profitable, and understand which sales teams
+      and channels are actually delivering results.</p>
+
+      <!-- ✏️ ADD DATASET LINK: replace # with your dataset download link -->
+      <a href="B2B Dataset.xlsx" target="_blank" class="modal-dataset">📂 Download Dataset ↗</a>
+      <div class="modal-divider"></div>
+
+      <p class="m-label">Star Metrics</p>
+      <div class="m-kpi-strip">
+        <div class="m-kpi">
+          <p class="m-kpi-label">Net Sales</p>
+          <p class="m-kpi-value">$22.41M</p>
+          <p class="m-kpi-sub">Across 3 years</p>
+        </div>
+        <div class="m-kpi">
+          <p class="m-kpi-label">Gross Margin</p>
+          <p class="m-kpi-value">47%</p>
+          <p class="m-kpi-sub">Overall GM%</p>
+        </div>
+        <div class="m-kpi">
+          <p class="m-kpi-label">Orders</p>
+          <p class="m-kpi-value">3,828</p>
+          <p class="m-kpi-sub">Total orders</p>
+        </div>
+        <div class="m-kpi">
+          <p class="m-kpi-label">Avg Order Value</p>
+          <p class="m-kpi-value">$5.9K</p>
+          <p class="m-kpi-sub">Per order</p>
+        </div>
+        <div class="m-kpi">
+          <p class="m-kpi-label">Target Achievement</p>
+          <p class="m-kpi-value">97.6%</p>
+          <p class="m-kpi-sub">Vs sales target</p>
+        </div>
+        <div class="m-kpi">
+          <p class="m-kpi-label">Return Rate</p>
+          <p class="m-kpi-value">3.6%</p>
+          <p class="m-kpi-sub">Avg discount 3.7%</p>
+        </div>
+      </div>
+
+      <p class="m-label">About the Dataset</p>
+      <p class="m-text">
+        <!-- ✏️ ADD DATASET DESCRIPTION: update this with your actual
+             dataset details — table names, row counts, date range -->
+        B2B sales and commercial dataset covering transactions across
+        3 regions, 6 sales channels, and 3 product categories from
+        2023 to 2025. Built as part of the ZoomCharts 4Ureport Challenge.
+        
+      </p>
+
+      <p class="m-label">Data Cleaning & Transformation</p>
+      <p class="m-title">All cleaning done in Power Query. DAX kept clean.</p>
+      <ul class="m-clean-list">
+        <!-- ✏️ ADD YOUR CLEANING STEPS: replace these with your actual steps -->
+        <li><strong>Standardised headers and data types:</strong> All date, currency, and percentage fields typed explicitly across all tables.</li>
+        <li><strong>Text cleaning:</strong> All text columns trimmed and cleaned to remove hidden characters and whitespace that would break relationships.</li>
+        <li><strong>Deduplication:</strong> Duplicate rows removed from dimension tables to ensure clean one-to-many relationships with the fact table.</li>
+        <li><strong>Columns renamed for clarity:</strong> Technical field names replaced with clear business labels for readability in the report.</li>
+        <li><strong>All DAX measures calculated explicitly:</strong> GM%, Target Achievement, Avg Discount %, and AOV built as explicit DAX measures to
+        keep the model efficient and the fact table clean.</li>
+      </ul>
+
+      <p class="m-label">Data Model</p>
+      <p class="m-title">Star schema — fact table at the centre.</p>
+      <div class="m-model-wrap">
+        <!-- ✏️ IMAGE SLOT A: your data model screenshot -->
+        <!-- upload to GitHub and replace ADD-YOUR-IMAGE with filename -->
+        <img src="B2B Modeling.png" alt="B2B Data Model"/>
+      </div>
+      <p class="m-model-caption">
+        <!-- ✏️ UPDATE: describe your actual model relationships -->
+        Fact table connects to dimension tables via foreign keys covering
+        customers, products, channels, promotions, sales reps, and dates.
+      </p>
+
+      <p class="m-label">Dashboard Walkthrough</p>
+      <p class="m-title">Three pages. Revenue, profitability, and execution.</p>
+      <div class="m-flipper" id="b2b-modal-flipper">
+        <div class="m-flip-tabs">
+          <div class="m-flip-tab active">Overview</div>
+          <div class="m-flip-tab">Profitability</div>
+          <div class="m-flip-tab">Commercial</div>
+        </div>
+        <div class="m-flip-stage">
+          <!-- ✏️ IMAGE SLOT B: Overview page screenshot -->
+          <div class="m-flip-page active">
+            <img src="B2BSales_Overview.png" alt="B2B Overview"/>
+          </div>
+          <!-- ✏️ IMAGE SLOT C: Profitability page screenshot -->
+          <div class="m-flip-page">
+            <img src="B2BSales_Profitability.png" alt="B2B Profitability"/>
+          </div>
+          <!-- ✏️ IMAGE SLOT D: Commercial page screenshot -->
+          <div class="m-flip-page">
+            <img src="B2BSales_Commercial.png" alt="B2B Commercial"/>
+          </div>
+        </div>
+        <div class="m-flip-nav">
+          <button class="m-flip-arrow m-flip-prev-b2b">← Prev</button>
+          <span class="m-flip-counter" id="b2b-counter">Page 1 of 3</span>
+          <button class="m-flip-arrow m-flip-next-b2b">Next →</button>
+        </div>
+      </div>
+      <div class="m-page-desc" id="b2b-page-desc">
+        <strong>Page 1 — Overview:</strong> Tracks net sales, gross profit,
+        and target achievement year over year giving leadership a full view
+        of commercial performance across regions, categories, and channels
+        with drill-down to quarter and month.
+      </div>
+
+      <p class="m-label">Visual Analysis</p>
+      <p class="m-title">Four visuals. Four business stories.</p>
+      <div class="m-visuals-grid">
+
+        <!-- VISUAL 1: Sales Performance -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT E: Sales Performance chart -->
+          <img class="m-visual-img"
+               src="B2B_Sales_performance.png"
+               alt="Sales Performance"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">Sales Directors & Finance team</p>
+            <p class="m-visual-title">Sales Performance — Net Sales vs Target</p>
+            <p class="m-visual-story">Net sales grew from $1.29M in Q1 2023 to
+            $2.35M in Q4 2025, but Q2 consistently dips below target every single
+            year while Q4 overshoots it. The business is not missing targets
+            overall it is timing its revenue unevenly. That is a sales planning
+            and incentive structure problem, not a demand problem.</p>
+          </div>
+        </div>
+
+        <!-- VISUAL 2: Customer Profitability by Industry -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT F: Customer Profitability bubble chart -->
+          <img class="m-visual-img"
+               src="Customer_profitability.png"
+               alt="Customer Profitability by Industry"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">Sales & Account Management team</p>
+            <p class="m-visual-title">Customer Profitability by Industry</p>
+            <p class="m-visual-story">Professional Services leads all industries
+            at 50% GM(Gross margin) despite not being the highest revenue industry. Education
+            and Manufacturing generate the most revenue at $3.2M+ but sit at
+            47–48% GM. The industries the sales team is spending the most effort
+            winning are not the ones delivering the best margin return.</p>
+          </div>
+        </div>
+
+        <!-- VISUAL 3: Product Profitability Drill-Down -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT G: Product Profitability chart -->
+          <img class="m-visual-img"
+               src="product_profitability.png"
+               alt="Product Profitability Drill-Down"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">Product & Finance team</p>
+            <p class="m-visual-title">Product Profitability Drill-Down</p>
+            <p class="m-visual-story">Software delivers 78% GM nearly double
+            Hardware's 38%. Services generates the most gross profit at $4.38M
+            but only at 43% margin. If investment decisions are made on gross
+            profit volume alone, Software gets chronically underinvested while
+            Hardware consumes resources it does not justify.</p>
+          </div>
+        </div>
+
+        <!-- VISUAL 4: Discount Impact by Promotion & Channel -->
+        <div class="m-visual-card">
+          <!-- ✏️ IMAGE SLOT H: Discount Impact matrix table -->
+          <img class="m-visual-img"
+               src="Discount_impact_b2b.png"
+               alt="Discount Impact by Promotion and Channel"/>
+          <div class="m-visual-body">
+            <p class="m-so-what">Commercial & Revenue Operations team</p>
+            <p class="m-visual-title">Discount Impact by Promotion & Channel</p>
+            <p class="m-visual-story">No-promotion deals generate the highest
+            net sales across all channels - $6.07M Digital, $7.03M Direct,
+            $3.35M Partner all at 49–50% GM. Negotiated deals carry 20%+
+            discounts but deliver margins as low as 36%. Discounting is not
+            driving more revenue, it is giving away margin on deals that
+            would likely have closed anyway.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="m-label">Business Questions & Answers</p>
+      <p class="m-title">Five questions the dashboard was built to answer.</p>
+      <ul class="m-biz-list">
+        <li class="m-biz-item">
+          <p class="m-biz-q">1. Are sales teams hitting targets and who is
+          leading performance?</p>
+          <p class="m-biz-a">→ Insight: The business hit 97.6% of its sales
+          target overall. But quarterly analysis shows Q2 consistently
+          underperforms while Q4 overdelivers — meaning revenue is being
+          back-loaded rather than built steadily across the year.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">2. Which product categories are generating the
+          most profitable revenue?</p>
+          <p class="m-biz-a">→ Insight: Software at 78% GM is the most
+          profitable category by far, despite not being the largest by gross
+          profit. Hardware at 38% is the weakest and should be scrutinised
+          before further investment is made in it.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">3. Where is margin being lost through discounting?</p>
+          <p class="m-biz-a">→ Insight: Negotiated deals carry 20%+ average
+          discounts across all three channels. The "None" promotion row
+          consistently outperforms every discounted category on both revenue
+          and margin — proving discounting is compressing profit on deals
+          that did not need it.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">4. Which regions and industries represent
+          the best growth opportunities?</p>
+          <p class="m-biz-a">→ Insight: Asia Pacific at 22% of revenue is
+          significantly underdeveloped compared to North America at 45.9%.
+          Professional Services leads on margin at 50% GM — making it the
+          most attractive industry for targeted growth investment.</p>
+        </li>
+        <li class="m-biz-item">
+          <p class="m-biz-q">5. Which sales channels are delivering the
+          best revenue and margin outcomes?</p>
+          <p class="m-biz-a">→ Insight: Direct Sales leads channel revenue
+          at 41.16% and consistently delivers higher net sales than Digital
+          or Partner channels across every promotion type. It is also the
+          channel where "None" promotion generates $7.03M — the highest
+          single revenue figure in the entire matrix.</p>
+        </li>
+      </ul>
+
+      <p class="m-label">Key Insights</p>
+      <p class="m-title">What the data is really telling us.</p>
+      <ul class="m-insight-list">
+        <li><strong>97.6% target achievement looks strong — but the quarterly
+        pattern tells a different story.</strong> Q2 misses target every year
+        while Q4 compensates. The business is not growing consistently —
+        it is recovering consistently. That is a different problem
+        requiring a different solution.</li>
+
+        <li><strong>Software is the most profitable product the business
+        sells and is probably its most underinvested.</strong> At 78% GM
+        with $3.27M in gross profit, Software outperforms Hardware on every
+        margin metric. Yet Services — at 43% GM — likely receives more sales
+        and marketing resource because it generates the most absolute profit.
+        That logic rewards volume over efficiency.</li>
+
+        <li><strong>The no-discount row is the most profitable row in
+        the entire commercial matrix — and nobody is talking about it.</strong>
+        Across all three channels, removing promotions entirely produces the
+        highest revenue and the highest margin simultaneously. That finding
+        alone challenges the foundational assumption behind most of the
+        commercial team's promotional activity.</li>
+
+        <li><strong>Asia Pacific is being underserved relative to
+        its potential.</strong> At 22% of revenue versus North America's
+        45.9%, the gap is too large to be purely structural. It suggests
+        either insufficient sales resource, misaligned product offering,
+        or a channel strategy that has not been adapted to the region.</li>
+
+        <li><strong>The gap between top and bottom sales directors
+        signals a coaching and territory problem, not just
+        a performance problem.</strong> When one team consistently
+        hits Q4 while another misses Q2, the issue is usually quota
+        design, territory assignment, or support resource — not
+        individual capability.</li>
+      </ul>
+
+      <p class="m-label">Recommendations</p>
+      <p class="m-title">What the business should do next.</p>
+      <ul class="m-insight-list">
+        <li><strong>Restructure quarterly targets to reduce Q4
+        dependency.</strong> Back-loaded revenue creates cash flow
+        uncertainty and pipeline risk. Incentive structures should
+        reward Q2 performance specifically to smooth the annual curve.</li>
+
+        <li><strong>Increase Software investment relative to its
+        margin contribution.</strong> At 78% GM, Software deserves
+        a larger share of sales effort, marketing spend, and product
+        development resource than its current gross profit rank suggests.</li>
+
+        <li><strong>Introduce a discount approval threshold for
+        Negotiated deals.</strong> At 20%+ average discount and
+        margins as low as 36%, Negotiated promotions need a senior
+        sign-off gate. No deal should be discounted beyond a defined
+        floor without explicit approval from commercial leadership.</li>
+
+        <li><strong>Build a dedicated Asia Pacific growth plan.</strong>
+        The region is too large to remain at 22% of revenue. A targeted
+        investment in local sales resource, channel partnerships, or
+        market-specific product configuration would close the gap.</li>
+
+        <li><strong>Prioritise Professional Services and Healthcare
+        in account targeting.</strong> Both industries deliver 49–50% GM
+        at meaningful revenue levels. Focusing new business development
+        effort on these two industries would improve portfolio margin
+        without requiring new products or pricing changes.</li>
+      </ul>
+
+      <div class="m-footer-bar">
+        <!-- ✏️ ADD LINK: replace # with your Power BI file link -->
+        <a href="#" target="_blank" class="m-link-btn">
+          View Power BI Dashboard ↗
+        </a>
       </div>
     </div>
   </div>
