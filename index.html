@@ -717,7 +717,7 @@
       </p>
 
       <p class="m-label">Dashboard Walkthrough</p>
-      <p class="m-title">Three pages. Revenue, profitability, and execution.</p>
+      <p class="m-title">Revenue, profitability, and execution.</p>
       <div class="m-flipper" id="b2b-modal-flipper">
         <div class="m-flip-tabs">
           <div class="m-flip-tab active">Overview</div>
@@ -854,61 +854,39 @@
         <li><strong>Software is the most profitable product the business sells and is probably its most underinvested.</strong> At 78% GM with $3.27M in gross profit, Software outperforms Hardware on every
         margin metric. Yet Services at 43% GM likely receives more sales and marketing resource because it generates the most absolute profit. That logic rewards volume over efficiency.</li>
 
-        <li><strong>The no-discount row is the most profitable row in
-        the entire commercial matrix — and nobody is talking about it.</strong>
-        Across all three channels, removing promotions entirely produces the
-        highest revenue and the highest margin simultaneously. That finding
-        alone challenges the foundational assumption behind most of the
-        commercial team's promotional activity.</li>
+        <li><strong>The no-discount row is the most profitable row in the entire commercial matrix and nobody is talking about it.</strong>
+        Across all three channels, removing promotions entirely produces the highest revenue and the highest margin simultaneously. That finding
+        alone challenges the foundational assumption behind most of the commercial team's promotional activity.</li>
 
-        <li><strong>Asia Pacific is being underserved relative to
-        its potential.</strong> At 22% of revenue versus North America's
-        45.9%, the gap is too large to be purely structural. It suggests
-        either insufficient sales resource, misaligned product offering,
-        or a channel strategy that has not been adapted to the region.</li>
+        <li><strong>Asia Pacific is being underserved relative to its potential.</strong> At 22% of revenue versus North America's
+        45.9%, the gap is too large to be purely structural. It suggests either insufficient sales resource, misaligned product offering, or a channel strategy that has not been adapted to the region.</li>
 
-        <li><strong>The gap between top and bottom sales directors
-        signals a coaching and territory problem, not just
-        a performance problem.</strong> When one team consistently
-        hits Q4 while another misses Q2, the issue is usually quota
-        design, territory assignment, or support resource — not
-        individual capability.</li>
+        <li><strong>The gap between top and bottom sales directors signals a coaching and territory problem, not just a performance problem.</strong> When one team consistently
+        hits Q4 while another misses Q2, the issue is usually quotadesign, territory assignment, or support resource not individual capability.</li>
       </ul>
 
       <p class="m-label">Recommendations</p>
       <p class="m-title">What the business should do next.</p>
       <ul class="m-insight-list">
-        <li><strong>Restructure quarterly targets to reduce Q4
-        dependency.</strong> Back-loaded revenue creates cash flow
-        uncertainty and pipeline risk. Incentive structures should
-        reward Q2 performance specifically to smooth the annual curve.</li>
+        <li><strong>Restructure quarterly targets to reduce Q4 dependency.</strong> Back-loaded revenue creates cash flow
+        uncertainty and pipeline risk. Incentive structures should reward Q2 performance specifically to smooth the annual curve.</li>
 
-        <li><strong>Increase Software investment relative to its
-        margin contribution.</strong> At 78% GM, Software deserves
-        a larger share of sales effort, marketing spend, and product
-        development resource than its current gross profit rank suggests.</li>
+        <li><strong>Increase Software investment relative to its margin contribution.</strong> At 78% GM, Software deserves
+        a larger share of sales effort, marketing spend, and product development resource than its current gross profit rank suggests.</li>
 
-        <li><strong>Introduce a discount approval threshold for
-        Negotiated deals.</strong> At 20%+ average discount and
-        margins as low as 36%, Negotiated promotions need a senior
-        sign-off gate. No deal should be discounted beyond a defined
-        floor without explicit approval from commercial leadership.</li>
+        <li><strong>Introduce a discount approval threshold for Negotiated deals.</strong> At 20%+ average discount and margins as low as 36%, Negotiated promotions need a senior
+        sign-off gate. No deal should be discounted beyond a defined floor without explicit approval from commercial leadership.</li>
 
-        <li><strong>Build a dedicated Asia Pacific growth plan.</strong>
-        The region is too large to remain at 22% of revenue. A targeted
-        investment in local sales resource, channel partnerships, or
-        market-specific product configuration would close the gap.</li>
+        <li><strong>Build a dedicated Asia Pacific growth plan.</strong> The region is too large to remain at 22% of revenue. A targeted
+        investment in local sales resource, channel partnerships, or market-specific product configuration would close the gap.</li>
 
-        <li><strong>Prioritise Professional Services and Healthcare
-        in account targeting.</strong> Both industries deliver 49–50% GM
-        at meaningful revenue levels. Focusing new business development
-        effort on these two industries would improve portfolio margin
-        without requiring new products or pricing changes.</li>
+        <li><strong>Prioritise Professional Services and Healthcare in account targeting.</strong> Both industries deliver 49–50% GM
+        at meaningful revenue levels. Focusing new business development effort on these two industries would improve portfolio margin without requiring new products or pricing changes.</li>
       </ul>
 
       <div class="m-footer-bar">
         <!-- ✏️ ADD LINK: replace # with your Power BI file link -->
-        <a href="#" target="_blank" class="m-link-btn">
+        <a href="B2B SALES.pbix" target="_blank" class="m-link-btn">
           View Power BI Dashboard ↗
         </a>
       </div>
@@ -966,9 +944,9 @@
     let cur = 0;
     const total = pages.length;
     const descs = [
-      '<strong>Page 1 — Overview:</strong> Tracks top-line performance across categories, channels, and regions — net sales, contribution revenue, fulfillment rate, and order volume with drill-down by quarter and channel group.',
-      '<strong>Page 2 — Key Drivers:</strong> Explains what is shaping margin across products, customers, promotions, and channels — answering whether discount depth is costing the business its profitability.',
-      '<strong>Page 3 — Risk Watchlist:</strong> Flags returns and service gaps — tracking return loss by reason, on-time delivery by carrier, and year-over-year monthly sales to surface where the business is quietly losing money.'
+      '<strong>Page 1 — Overview:</strong> Tracks top-line performance across categories, channels, and regions, net sales, contribution revenue, fulfillment rate, and order volume with drill-down by quarter and channel group.',
+      '<strong>Page 2 — Key Drivers:</strong> Explains what is shaping margin across products, customers, promotions, and channels answering whether discount depth is costing the business its profitability.',
+      '<strong>Page 3 — Risk Watchlist:</strong> Flags returns and service gaps tracking return loss by reason, on-time delivery by carrier, and year-over-year monthly sales to surface where the business is quietly losing money.'
     ];
     function goTo(i){
       pages.forEach((p,j)=>p.classList.toggle('active',j===i));
@@ -981,6 +959,35 @@
     wrap.querySelector('.m-flip-prev').addEventListener('click',()=>goTo((cur-1+total)%total));
     wrap.querySelector('.m-flip-next').addEventListener('click',()=>goTo((cur+1)%total));
   }
+
+  // B2B flipper
+(function(){
+  const wrap = document.getElementById('b2b-modal-flipper');
+  if(!wrap) return;
+  const pages = wrap.querySelectorAll('.m-flip-page');
+  const tabs  = wrap.querySelectorAll('.m-flip-tab');
+  const counter = document.getElementById('b2b-counter');
+  const descEl  = document.getElementById('b2b-page-desc');
+  let cur = 0;
+  const total = pages.length;
+  const descs = [
+    '<strong>Page 1 — Overview:</strong> Tracks net sales, gross profit, and target achievement year over year giving leadership a full view of commercial performance across regions, categories, and channels.',
+    '<strong>Page 2 — Profitability:</strong> Breaks down gross margin by product category and customer industry showing which products and customers actually generate profit, not just revenue.',
+    '<strong>Page 3 — Commercial:</strong> Covers channel execution, discount impact by promotion type, and sales team performance revealing where margin is being given away and where it is being protected.'
+  ];
+  function goTo(i){
+    pages.forEach((p,j)=>p.classList.toggle('active',j===i));
+    tabs.forEach((t,j)=>t.classList.toggle('active',j===i));
+    counter.textContent='Page '+(i+1)+' of '+total;
+    descEl.innerHTML=descs[i];
+    cur=i;
+  }
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>goTo(i)));
+  wrap.querySelector('.m-flip-prev-b2b')
+      .addEventListener('click',()=>goTo((cur-1+total)%total));
+  wrap.querySelector('.m-flip-next-b2b')
+      .addEventListener('click',()=>goTo((cur+1)%total));
+})();
 </script>
 
 </body>
