@@ -331,10 +331,10 @@
         </p>
         <div class="project-tags">
           <span class="tag">DAX</span>
-          <span class="tag">Power Query</span>
           <span class="tag">Star Schema</span>
-          <span class="tag">Contribution Margin</span>
-          <span class="tag">Customer Segmentation</span>
+          <span class="tag">Ecommerce</span>
+          <span class="tag">Operations</span>
+          <span class="tag">Accounting & Finance</span>
         </div>
         <button class="case-study-btn" onclick="openModal('ecom')">View Case Study ↗</button>
       </div>
@@ -912,16 +912,44 @@
       <a href="#" target="_blank" class="modal-dataset">📂 Download Dataset ↗</a>
       <div class="modal-divider"></div>
 
-      <p class="m-label">Star Metrics</p>
-      <div class="m-model-wrap">
-        <!-- ✏️ IMAGE SLOT A: star metrics screenshot -->
-        <img src="ADD-PROC-STAR-METRICS.png" alt="Procurement Star Metrics"/>
+        <p class="m-label">Star Metrics</p>
+         <div class="m-kpi-strip">
+         <div class="m-kpi">
+           <p class="m-kpi-label">Total Spend</p>
+           <p class="m-kpi-value">£908.8M</p>
+           <p class="m-kpi-sub">Vs £1.01B budget</p>
       </div>
-
+         <div class="m-kpi">
+           <p class="m-kpi-label">Savings Rate</p>
+           <p class="m-kpi-value">10.29%</p>
+           <p class="m-kpi-sub">Which is £104.27M</p>
+      </div>
+         <div class="m-kpi">
+           <p class="m-kpi-label">Total PO</p>
+           <p class="m-kpi-value">5,200</p>
+           <p class="m-kpi-sub">Across 3 years</p>
+      </div>
+         <div class="m-kpi">
+           <p class="m-kpi-label">Active Suppliers</p>
+           <p class="m-kpi-value">15</p>
+           <p class="m-kpi-sub">5 preferred suppliers</p>
+      </div>
+         <div class="m-kpi">
+           <p class="m-kpi-label">Avg Unit Price</p>
+           <p class="m-kpi-value">£1.83K</p>
+           <p class="m-kpi-sub">Across 5,200 PO</p>
+      </div>
+         <div class="m-kpi">
+           <p class="m-kpi-label">Maverick Spend</p>
+           <p class="m-kpi-value">£98.19M</p>
+           <p class="m-kpi-sub">10.8% rogue buying</p>
+   </div>
+   </div>
+      
       <p class="m-label">About the Dataset</p>
       <p class="m-text">The source data arrived as a flat procurement transaction
       file containing supplier details, purchase order records, invoice status,
-      delivery performance, contract coverage, and ESG scores — all in one table.
+      delivery performance, contract coverage, and ESG scores all in one table.
       Before any modeling could begin, the data was restructured into a star schema
       separating transactional facts from supplier, department, category, and date
       dimensions to support efficient analysis across all three report pages.</p>
