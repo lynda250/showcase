@@ -971,19 +971,17 @@
         <li><strong>All DAX measures calculated explicitly:</strong> Maverick
         Spend %, Savings Rate, On-Time Delivery %, Contract Coverage %,
         Single-Source Spend %, and Avg ESG Score built as explicit DAX measures
-        — keeping the model efficient and the fact table clean.</li>
+        keeping the model efficient and the fact table clean.</li>
       </ul>
 
       <p class="m-label">Data Model</p>
-      <p class="m-title">Star schema — fact table at the centre.</p>
+      <p class="m-title">Star schema fact table at the centre.</p>
       <div class="m-model-wrap">
         <!-- ✏️ IMAGE SLOT B: data model screenshot -->
         <img src="Procurement Modeling.png" alt="Procurement Data Model"/>
       </div>
-      <p class="m-model-caption">Fact table connects to dimension tables covering
-      suppliers, departments, categories, regions, and dates with a separate
-      calculated measures table kept off the fact table to maintain a clean,
-      efficient model.</p>
+      <p class="m-model-caption">Fact table connects to dimension tables covering suppliers, departments, categories, regions, and dates with a separate
+      calculated measures table kept off the fact table to maintain a clean, efficient model.</p>
 
       <p class="m-label">Dashboard Walkthrough</p>
       <p class="m-title">Three pages. Spend, suppliers, and risk.</p>
@@ -1014,10 +1012,8 @@
         </div>
       </div>
       <div class="m-page-desc" id="proc-page-desc">
-        <strong>Page 1 — Executive Overview:</strong> Tracks total spend against
-        budget, maverick spend by category and department, and regional spend
-        distribution — giving leadership a full picture of where money is going
-        and where control is breaking down.
+        <strong>Page 1 — Executive Overview:</strong> Tracks total spend against budget, maverick spend by category and department, and regional spend
+        distribution giving leadership a full picture of where money is going and where control is breaking down.
       </div>
 
       <p class="m-label">Visual Analysis</p>
@@ -1031,13 +1027,10 @@
                src="P_salestrend.png"
                alt="Spend vs Budget Trend"/>
           <div class="m-visual-body">
-            <p class="m-so-what">So what — Finance & Procurement leadership</p>
+            <p class="m-so-what">Finance & Procurement leadership</p>
             <p class="m-visual-title">Spend vs Budget Trend</p>
-            <p class="m-visual-story">Actual spend consistently tracks below
-            budget but spikes in Q4 every year before dropping in Q1. The
-            business is not overspending — it is back-loading purchases, which
-            creates rushed decisions and reduced negotiating leverage when
-            suppliers know orders are coming regardless of price.</p>
+            <p class="m-visual-story">Actual spend consistently tracks below budget but spikes in Q4 every year before dropping in Q1. The
+            business is not overspending it is back-loading purchases, which creates rushed decisions and reduced negotiating leverage when suppliers know orders are coming regardless of price.</p>
           </div>
         </div>
 
@@ -1048,13 +1041,10 @@
                src="P_ESG.png"
                alt="Avg Supplier ESG by Spend and Risk"/>
           <div class="m-visual-body">
-            <p class="m-so-what">So what — Risk & Sustainability teams</p>
+            <p class="m-so-what">Risk & Sustainability teams</p>
             <p class="m-visual-title">Avg Supplier ESG by Spend and Risk</p>
-            <p class="m-visual-story">The most expensive suppliers are not
-            the most sustainable. Blue Horizon Packaging sits at
-            second-highest spend but scores below the 60.55 ESG average.
-            Spend concentration in low-ESG suppliers is a reputational and
-            regulatory risk — not just a values question.</p>
+            <p class="m-visual-story">The most expensive suppliers are not the most sustainable. Blue Horizon Packaging sits at second-highest spend but scores below the 60.55 ESG average.
+            Spend concentration in low-ESG suppliers is a reputational and regulatory risk not just a values question.</p>
           </div>
         </div>
 
@@ -1065,13 +1055,10 @@
                src="P_dept.png"
                alt="Maverick Spend by Department"/>
           <div class="m-visual-body">
-            <p class="m-so-what">So what — CFO & Department Heads</p>
+            <p class="m-so-what">CFO & Department Heads</p>
             <p class="m-visual-title">Maverick Spend by Department</p>
-            <p class="m-visual-story">£98.19M is flowing outside contracted
-            channels. Marketing leads at £16.8M. Every pound of maverick
-            spend bypasses negotiated pricing, contract protections, and
-            audit trails — the departments generating it are likely unaware
-            of the true cost beyond the invoice price.</p>
+            <p class="m-visual-story">£98.19M is flowing outside contracted channels. Marketing leads at £16.8M. Every pound of maverick spend bypasses negotiated pricing, contract protections, and
+            audit trails the departments generating it are likely unaware of the true cost beyond the invoice price.</p>
           </div>
         </div>
 
@@ -1082,128 +1069,82 @@
                src="P_R&C.png"
                alt="Suppliers Risk and Compliance"/>
           <div class="m-visual-body">
-            <p class="m-so-what">So what — Procurement & Risk Management</p>
+            <p class="m-so-what">Procurement & Risk Management</p>
             <p class="m-visual-title">Suppliers Risk and Compliance</p>
-            <p class="m-visual-story">Risk classification alone is not enough.
-            Nordic Office Solutions carries 22.21% single-source exposure
-            despite Low risk status. Iron Gate Steel has 70.80% maverick
-            spend despite Medium classification. The real vulnerabilities
-            only appear when you look at multiple dimensions together.</p>
+            <p class="m-visual-story">Risk classification alone is not enough. Nordic Office Solutions carries 22.21% single-source exposure despite Low risk status. Iron Gate Steel has 70.80% maverick
+            spend despite Medium classification. The real vulnerabilities only appear when you look at multiple dimensions together.</p>
           </div>
         </div>
-
       </div>
 
       <p class="m-label">Business Questions & Answers</p>
       <p class="m-title">Five questions the dashboard was built to answer.</p>
       <ul class="m-biz-list">
         <li class="m-biz-item">
-          <p class="m-biz-q">1. Is the organisation spending within budget
-          and achieving planned savings?</p>
-          <p class="m-biz-a">→ Insight: Total spend of £908.8M came in under
-          the £1.01B budget, delivering a 10.29% savings rate (£104.27M).
-          But spend is heavily back-loaded toward Q4 every year, creating
-          planning and negotiation problems that the headline saving masks.</p>
+          <p class="m-biz-q">1. Is the organisation spending within budget and achieving planned savings?</p>
+          <p class="m-biz-a">→ Insight: Total spend of £908.8M came in under the £1.01B budget, delivering a 10.29% savings rate (£104.27M).
+          But spend is heavily back-loaded toward Q4 every year, creating planning and negotiation problems that the headline saving masks.</p>
         </li>
         <li class="m-biz-item">
-          <p class="m-biz-q">2. Which suppliers are delivering value and
-          which are creating risk?</p>
-          <p class="m-biz-a">→ Insight: Delta Engineering leads spend at £75M
-          but carries a 36.38-day average lead time. Blue Horizon Packaging
-          at £74M scores below the ESG average. High spend does not mean
-          low risk — the two dimensions need to be assessed together.</p>
+          <p class="m-biz-q">2. Which suppliers are delivering value and which are creating risk?</p>
+          <p class="m-biz-a">→ Insight: Delta Engineering leads spend at £75M but carries a 36.38-day average lead time. Blue Horizon Packaging
+          at £74M scores below the ESG average. High spend does not mean low risk the two dimensions need to be assessed together.</p>
         </li>
         <li class="m-biz-item">
-          <p class="m-biz-q">3. How much spend is happening outside approved
-          contracts and why does it matter?</p>
-          <p class="m-biz-a">→ Insight: £98.19M — 10.8% of total spend — is
-          maverick buying outside contracted channels. Marketing alone
-          accounts for £16.8M. This spend has no negotiated pricing, no
-          SLA protection, and no audit trail.</p>
+          <p class="m-biz-q">3. How much spend is happening outside approved contracts and why does it matter?</p>
+          <p class="m-biz-a">→ Insight: £98.19M of total spend 10.8%  is maverick spend meaning buying outside contracted channels. Marketing alone
+          accounts for £16.8M. This spend has no negotiated pricing, no SLA protection, and no audit trail.</p>
         </li>
         <li class="m-biz-item">
-          <p class="m-biz-q">4. Where are invoice and payment backlogs
-          building up?</p>
-          <p class="m-biz-a">→ Insight: £128.4M sits in overdue invoices
-          (15.52% of POs) with only 31.79% of invoices fully paid. This
-          creates supplier relationship risk — vendors may deprioritise
-          orders or tighten credit terms in response.</p>
+          <p class="m-biz-q">4. Where are invoice and payment backlogs building up?</p>
+          <p class="m-biz-a">→ Insight: £128.4M sits in overdue invoices (15.52% of POs) with only 31.79% of invoices fully paid. This
+          creates supplier relationship risk vendors may deprioritise orders or tighten credit terms in response.</p>
         </li>
         <li class="m-biz-item">
-          <p class="m-biz-q">5. Which departments are driving the most
-          uncontrolled spending?</p>
-          <p class="m-biz-a">→ Insight: Marketing, Finance, and IT lead
-          maverick spend at £16.8M, £13M, and £12.4M respectively. These
-          are not procurement failures — they are business control failures
-          that procurement policy alone cannot fix.</p>
+          <p class="m-biz-q">5. Which departments are driving the most uncontrolled spending?</p>
+          <p class="m-biz-a">→ Insight: Marketing, Finance, and IT leads maverick spend at £16.8M, £13M, and £12.4M respectively. These
+          are not procurement failures they are business control failures that procurement policy alone cannot fix.</p>
         </li>
       </ul>
 
       <p class="m-label">Key Insights</p>
       <p class="m-title">What the data is really telling us.</p>
       <ul class="m-insight-list">
-        <li><strong>Savings look strong on paper but delivery risk
-        is eating into them.</strong> £104.27M saved against budget sounds
-        impressive. But with 35.87% of orders arriving late and an average
-        lead time of 36 days, the operational cost of poor delivery
-        performance is compressing those savings in ways the savings
-        report cannot capture.</li>
+        <li><strong>Savings look strong on paper but delivery risk is eating into them.</strong> £104.27M saved against budget sounds
+        impressive. But with 35.87% of orders arriving late and an average lead time of 36 days, the operational cost of poor delivery
+        performance is compressing those savings in ways the savings report cannot capture.</li>
 
-        <li><strong>Over a third of spend has no approved contract
-        behind it.</strong> Contract coverage at 64.49% means roughly
-        £322M in spend operates without formal agreements, negotiated
-        pricing, or audit protection. That is not a gap — it is a
-        structural control failure.</li>
+        <li><strong>Over a third of spend has no approved contract behind it.</strong> Contract coverage at 64.49% means roughly
+        £322M in spend operates without formal agreements, negotiated pricing, or audit protection. That is not a gap it is a structural control failure.</li>
 
-        <li><strong>The maverick spend problem is a department
-        behaviour problem, not a procurement process problem.</strong>
-        When Marketing, Finance, and IT are the top three maverick spenders,
-        the issue is not that procurement policy does not exist — it is
-        that departments are bypassing it. Policy enforcement needs to
-        happen at department head level, not procurement level.</li>
+        <li><strong>The maverick spend problem is a department behaviour problem, not a procurement process problem.</strong>
+        When Marketing, Finance, and IT are the top three maverick spenders, the issue is not that procurement policy does not exist it is
+        that departments are bypassing it. Policy enforcement needs to happen at department head level, not procurement level.</li>
 
-        <li><strong>ESG risk is hiding in the highest-spend
-        suppliers.</strong> The suppliers receiving the most money are
-        not the ones scoring highest on ESG. That misalignment will
-        become a liability as sustainability reporting requirements
-        tighten across industries.</li>
+        <li><strong>ESG risk is hiding in the highest-spend suppliers.</strong> The suppliers receiving the most money are
+        not the ones scoring highest on ESG. That misalignment will become a liability as sustainability reporting requirements tighten across industries.</li>
 
-        <li><strong>£128.4M in unpaid invoices is a supplier
-        relationship time bomb.</strong> At 15.52% overdue and only
-        31.79% fully paid, the organisation is building goodwill debt
-        with its own supply chain. Suppliers operating on thin margins
-        cannot absorb this indefinitely.</li>
+        <li><strong>£128.4M in unpaid invoices is a supplier relationship time bomb.</strong> At 15.52% overdue and only 31.79% fully paid, the organisation is building goodwill debt
+        with its own supply chain. Suppliers operating on thin margins cannot absorb this indefinitely.</li>
       </ul>
 
       <p class="m-label">Recommendations</p>
       <p class="m-title">What the business should do next.</p>
       <ul class="m-insight-list">
-        <li><strong>Rebalance procurement activity away from Q4.</strong>
-        Back-loaded spending creates rushed decisions and weak negotiating
-        positions. Quarterly spend targets with department-level tracking
-        would smooth the curve.</li>
+        <li><strong>Rebalance procurement activity away from Q4.</strong> Back-loaded spending creates rushed decisions and weak negotiating
+        positions. Quarterly spend targets with department-level tracking would smooth the curve.</li>
 
-        <li><strong>Raise contract coverage to a minimum 80% of spend.</strong>
-        The current 64.49% leaves too much spend unprotected. Priority
-        should go to the highest-spend categories and departments with
-        the highest maverick rates.</li>
+        <li><strong>Raise contract coverage to a minimum 80% of spend.</strong> The current 64.49% leaves too much spend unprotected. Priority
+        should go to the highest-spend categories and departments with the highest maverick rates.</li>
 
-        <li><strong>Put Blue Horizon Packaging on an ESG improvement
-        plan or begin qualifying alternatives.</strong> As the second
-        largest supplier by spend with a below-average ESG score, it
-        represents a concentration of sustainability risk the organisation
-        cannot ignore.</li>
+        <li><strong>Put Blue Horizon Packaging on an ESG improvement plan or begin qualifying alternatives.</strong> As the second
+        largest supplier by spend with a below-average ESG score, it represents a concentration of sustainability risk the organisation cannot ignore.</li>
 
-        <li><strong>Create a structured invoice clearing plan for
-        the £128.4M overdue balance.</strong> Prioritise suppliers with
-        the highest spend and longest payment delays before relationship
-        damage becomes supply chain disruption.</li>
+        <li><strong>Create a structured invoice clearing plan for the £128.4M overdue balance.</strong> Prioritise suppliers with
+        the highest spend and longest payment delays before relationship damage becomes supply chain disruption.</li>
 
-        <li><strong>Introduce department-level maverick spend
-        accountability.</strong> Marketing and Finance cannot continue
-        generating £30M+ in uncontrolled spending without consequences.
-        Monthly reporting to department heads — not just procurement —
-        is the minimum intervention required.</li>
+        <li><strong>Introduce department-level maverick spend accountability.</strong> Marketing and Finance cannot continue  generating £30M+ in uncontrolled spending without consequences.
+        Monthly reporting to department heads not just procurement is the minimum intervention required.</li>
       </ul>
 
       <div class="m-footer-bar">
@@ -1306,9 +1247,9 @@
   let cur = 0;
   const total = pages.length;
   const descs = [
-    '<strong>Page 1 — Executive Overview:</strong> Tracks total spend against budget, maverick spend by category and department, and regional spend distribution — giving leadership a full picture of where money is going and where control is breaking down.',
-    '<strong>Page 2 — Suppliers Performance:</strong> Covers top supplier spend, on-time delivery rates, ESG scores, and supplier distribution by region — showing which suppliers are reliable and which are creating operational risk.',
-    '<strong>Page 3 — Risk, Control & Efficiency:</strong> Flags maverick spend, single-source exposure, high-risk supplier spend, overdue invoices, and contract coverage gaps — the page that answers where the organisation is most vulnerable.'
+    '<strong>Page 1 — Executive Overview:</strong> Tracks total spend against budget, maverick spend by category and department, and regional spend distribution, giving leadership a full picture of where money is going and where control is breaking down.',
+    '<strong>Page 2 — Suppliers Performance:</strong> Covers top supplier spend, on-time delivery rates, ESG scores, and supplier distribution by region, showing which suppliers are reliable and which are creating operational risk.',
+    '<strong>Page 3 — Risk, Control & Efficiency:</strong> Flags maverick spend, single-source exposure, high-risk supplier spend, overdue invoices, and contract coverage gaps the page that answers where the organisation is most vulnerable.'
   ];
   function goTo(i){
     pages.forEach((p,j)=>p.classList.toggle('active',j===i));
