@@ -382,10 +382,8 @@
         <div class="project-badge">📈 Power BI</div>
         <h3 class="project-title">Procurement Performance Analysis</h3>
         <p class="project-desc">
-          Three-page procurement report tracking £908.8M in spend across
-          15 suppliers, 10 departments, and 4 regions — identifying where
-          budget is leaking through maverick spend, overdue invoices, and
-          contract coverage gaps.
+          Built for finance and procurement teams who need to see beyond total spend. 
+          Tracks budget variance, maverick buying, supplier risk, ESG performance, and invoice health across 3 years of procurement activity.
         </p>
         <div class="project-tags">
           <span class="tag">DAX</span>
@@ -946,13 +944,24 @@
    </div>
    </div>
       
-      <p class="m-label">About the Dataset</p>
-      <p class="m-text">The source data arrived as a flat procurement transaction
-      file containing supplier details, purchase order records, invoice status,
-      delivery performance, contract coverage, and ESG scores all in one table.
-      Before any modeling could begin, the data was restructured into a star schema
-      separating transactional facts from supplier, department, category, and date
-      dimensions to support efficient analysis across all three report pages.</p>
+    <p class="m-label">About the Dataset</p>
+<p class="m-text">
+  The source data arrived as a single flat procurement transaction table
+  containing 5,200 rows and 57 columns every purchase
+  order record, supplier detail, item description, financial metric, delivery
+  date, contract reference, invoice status, and ESG score all sitting in one
+  sheet with no pre-built relationships. Before any modeling could begin,
+  the data had to be read carefully and restructured. Columns were grouped
+  by what they described supplier attributes, item and category details,
+  date fields, financial measures, and compliance flag and separated into
+  dedicated dimension tables connected to a central fact table. The dataset
+  covers <strong>2022 to 2024</strong>, spans <strong>15 suppliers</strong>
+  across <strong>4 regions</strong>, and includes a separate Calendar tab
+  and a Vocabulary & Notes tab that documented field definitions confirming
+  the dataset was designed for analysis, just not yet structured for it.
+  It was released by <strong>FP20 Analytics</strong> as a Beginner–Medium
+  Power BI challenge dataset with no nulls across all 57 columns.
+</p>
 
       <p class="m-label">Data Cleaning & Transformation</p>
       <p class="m-title">All cleaning done in Power Query. DAX kept clean.</p>
