@@ -424,7 +424,9 @@
     <div class="modal-inner">
       <span class="modal-badge">📈 Power BI · ZoomCharts</span>
       <h2 class="modal-title">Ecommerce Performance Dashboard</h2>
-      <p class="modal-intro">An e-commerce business operating across multiple European regions is growing in revenue but facing quiet pressure on margins, rising return rates, and inconsistent delivery performance. This dashboard goes beyond top-line revenue to answer where profit is actually coming from and where it is being silently lost.</p>
+      <p class="modal-intro">An e-commerce business operating across multiple European regions is growing in revenue but facing quiet pressure on margins, 
+      rising return rates, and inconsistent delivery performance. The goal is to help stakeholders identify profitable growth opportunities, understand margin pressure, evaluate promotions and channels, and discover where returns, delivery performance, or 
+      stock availability are reducing business value. This dashboard goes beyond top-line revenue to answer where profit is actually coming from and where it is being silently lost.</p>
       <a href="https://github.com/lynda250/showcase/raw/main/Ecommerce_profitability_4Ureport_challenge_data.xlsx" target="_blank" class="modal-dataset">📂 Download Dataset ↗</a>
       <div class="modal-divider"></div>
 
@@ -439,9 +441,11 @@
       </div>
 
       <p class="m-label">About the Dataset</p>
-      <p class="m-text">The source data arrived as a single flat Excel workbook containing one consolidated table every order line, customer detail, product attribute, geography, promotion, and fulfillment metric all sitting in the same sheet. 
-        Before any modeling could begin, the data needed to be understood, segmented, and restructured.
-        From that flat file, the data was split and organized into a star schema one central fact table (FactOrderLine) capturing every transaction line, connected to 9 dimensional tables: 
+      <p class="m-text">a European e-commerce dataset containing more than 9,000 order-line records from 2024 to 2025. 
+        The data connects transactions with products, customers, geographic markets, promotions, sales channels, fulfillment providers, return reasons, and customer lifecycle stages.
+        The dataset follows the complete path from gross sales to contribution margin. It includes discounts, refunds, shipping revenue, product costs, outbound and return shipping costs, 
+        fulfillment costs, payment fees, allocated marketing costs, return processing costs, lost sales value, and return losses.
+        The data was later split and organized into a star schema one central fact table (FactOrderLine) capturing every transaction line, connected to 9 dimensional tables: 
         DimDate, DimProduct, DimCustomer, DimGeography, DimPromotion, DimFulfillment, DimSalesChannel, DimReturnReason, and DimCohortAge. 
         This separation ensured clean relationships, efficient querying, and a model built for analysis rather than storage.
 
